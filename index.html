@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>个人网站</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .header {
+            padding: 20px;
+            text-align: center; 
+            background: #ffde59;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #333;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #f8f8f2;
+            color: black;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .side, .main {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 300px;
+            max-width: 800px;
+        }
+
+        .photo-grid, .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .photo-grid img, .video-grid video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .photo-grid img:hover, .video-grid video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-grid div, .video-grid div {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #333;
+            color: white;
+            position: relative;
+        }
+
+        @media screen and (max-width: 800px) {
+            .navbar, .content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .side, .main {
+                width: 100%;
+            }
+
+            .article-row {
+                flex-direction: column;
+            }
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #ffde59;
+            color: black;
+        }
+
+        h3, h4, h5, p {
+            margin-bottom: 20px;
+        }
+
+        .fakeimg a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .fakeimg a:hover {
+            color: #ffde59;
+        }
+
+        .article-row {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .article-card {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .article-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-card h4 {
+            margin-bottom: 15px;
+        }
+
+        .article-card a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .article-card a:hover {
+            color: #ffde59;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>我的网站</h3>
+        <p><b>欢迎来到我的个人网站</b>!</p>
+    </div>
+    <div class="navbar">
+        <a href="index.html">首页</a>
+        <a href="about.html">关于我</a>
+        <a href="potoshare.html">照片分享</a>
+        <a href="video.html">最新视频</a>
+        <a href="article1.html">最新文章</a>
+        <a href="liuyan.html">留言</a>
+    </div>
+    <div class="content">
+        <div class="side" id="about">
+            <h3>关于我</h3>
+            <h4>我的照片</h4>
+            <div class="photo-grid" id="photos">
+                <div>
+                    <img src="个人照片5.jpg" alt="我的照片">
+                </div>
+                <div>
+                    <img src="个人照片2.jpg" alt="我的照片">
+                </div>
+            </div>
+            <p>大家好！我是吴琴芳，欢迎大家来到我的个人网页！我出生于2003年10月1日。目前是重庆邮电大学自动化学院的一名大二在读生。本人喜欢音乐、阅读以及旅游。这里是我的个人简介，下面进行更多介绍。</p>
+            <h4>更多介绍</h4>
+            <h5>竞赛经历</h5>
+            <ul>
+                <li>2023年获第四届MathorCup高校数学建模挑战赛——大数据竞赛三等奖</li>
+                <li>2024年5月获中国机器人及人工智能大赛——智慧药房赛道省级二等奖</li>
+                <li>2024年5月获2024年第十四届MathorCup数学应用挑战赛一等奖</li>
+            </ul>
+            <h5>旅游经历</h5>
+            <p>这里为大家介绍我的最近一次旅游经历。在五一期间，我去往了四川的西昌，下面为部分照片。</p>
+            <div class="photo-grid">
+                <div>
+                    <img src="风好大.jpg" alt="到达西昌，风超级大">
+                    <p>到达西昌，风超级大！</p>
+                </div>
+                <div>
+                    <img src="庐山.jpg" alt="庐山爬了">
+                    <p>天气超好，庐山好美！</p>
+                </div>
+                <div>
+                    <img src="邛海.jpg" alt="邛海看了">
+                    <p>邛海看了！拍照超好看！</p>
+                </div>
+                <div>
+                    <img src="建厂古城.jpg" alt="古城好漂亮">
+                    <p>建昌古城好漂亮！</p>
+                    <img src="小渔村.jpg" alt="浓情夏威夷风">
+                    <p>小渔村！</p>
+                </div>
+                <div>
+                    <img src="名族服饰.jpg" alt="彝族服装穿了">
+                    <p>第一次体验民族服饰！美美哒！</p>
+                </div>
+                <div>
+                    <img src="花花.jpg" alt="">
+                    <p>花花</p>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <h3>兴趣爱好</h3>
+            <h5>爱好</h5>
+            <p>下面为大家介绍我的兴趣爱好。</p>
+            <ul>
+                <li>拍摄风景</li>
+                <li>品尝美食</li>
+                <li>旅游玩耍</li>
+                <li>阅读学习</li>
+            </ul>
+            <div class="photo-grid">
+                <div>
+                    <img src="日出1.jpg" alt="日出">
+                    <p>日落真好看！</p>
+                </div>
+                <div>
+                    <img src="烤肉.jpg" alt="和好朋友去吃烤肉">
+                    <p>和好朋友去吃烤肉。</p> 
+                </div>
+                <div>
+                    <img src="烤鱼.jpg" alt="烤鱼">
+                    <p>烤鱼真好吃</p>
+                </div>
+                <div>
+                    <img src="猴子.jpg" alt="猴子">
+                    <p>庐山的猴子真活泼！</p>
+                </div>
+                <div>
+                    <img src="老君洞.jpg" alt="俯拍老君洞">
+                    <p>俯拍老君洞。</p>
+                </div>
+                <div>
+                    <img src="小车.jpg" alt="和队友一起参加比赛">
+                    <p>ROS智能车比赛现场</p>
+                </div>
+            </div>
+            <h3 id="videos">最新视频</h3>
+            <div class="video-grid">
+                <div>
+                    <video loop controls>
+                        <source src="跳舞.mp4" type="video/mp4">
+                    </video>
+                    <p>和好朋友一起拍手势舞</p>
+                </div>
+                <div>
+                    <video loop controls>
+                        <source src="小车视频.mp4" type="video/mp4">
+                    </video>
+                    <p>小车</p>
+                </div>
+                <div>
+                    <video loop controls>
+                        <source src="手势舞1.mp4" type="video/mp4">
+                    </video>
+                    <p>又一手势舞！</p>
+                </div> 
+                <div>
+                    <video loop controls>
+                        <source src="跳舞机器人.mp4" type="video/mp4">
+                    </video>
+                    <p>跳舞机器人！跳的真好！</p>
+                </div>
+            </div>
+            <h3 id="articles">最新文章</h3>
+            <div class="article-row">
+                <div class="article-card">
+                    <h4>平凡的世界</h4>
+                    <a href="article3.html" title="平凡的世界" target="_top">内容摘要与感想分享</a>
+                </div>
+                <div class="article-card">
+                    <h4>活着</h4>
+                    <a href="article2.html" title="活着" target="_top">内容摘要与感想分享</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>页脚</h2>
+    </div>
+</body>
+</html>

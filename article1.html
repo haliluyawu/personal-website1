@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>个人网站</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .header {
+            padding: 20px;
+            text-align: center;
+            background: #ffde59;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #333;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #f8f8f2;
+            color: black;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .book-section {
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-section h3 {
+            margin-bottom: 20px;
+        }
+
+        .book-section img {
+            max-width: 400px; /* 调整封面图片的最大宽度 */
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .book-section p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .book-section h4 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #333;
+            color: white;
+            position: relative;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>我的网站</h3>
+        <p><b>欢迎来到我的个人网站</b>!</p>
+    </div>
+    <div class="navbar">
+        <a href="index.html">首页</a>
+        <a href="about.html">关于我</a>
+        <a href="photoshare.html">照片分享</a>
+        <a href="video.html">最新视频</a>
+        <a href="article1.html">最新文章</a>
+        <a href="liuyan.html">留言</a>
+    </div>
+    <div class="content">
+        <div class="book-section">
+            <h3>平凡的世界</h3>
+            <img src="平凡的世界封面.jpg" alt="平凡的世界封面">
+            <h4>内容摘要</h4>
+            <p>送走秀莲以后，孙少安独自一人握着自行车把，在石圪节的公路上驻足凝思。此刻，天边一行大雁正嗷嗷叫着从对面的土山上空向南迁徙而去，那凄凉而又激越的叫声勾起了他对时光荏苒的无限感慨。冬天的脚步近了，而春天仿佛还在昨天——那时，他手里紧攥着润叶托人捎来的纸条，同样站在这个位置上，满心期待地看着南归的大雁划破蓝天，带来了春的消息。现在，同样的地点，同样的天空，却是另一番景象：大雁再次启程南飞，时间如同流水般悄无声息地逝去，生活却并没有因为季节更替而变得简单。这一年来，孙少安的生活发生了翻天覆地的变化。作为双水村的一家之主，他带领全家走出贫困，办起了砖窑，又经历了无数的挫折与困苦。秀莲，这个愿意与他共同承受风雨、无怨无悔的妻子，始终是他最坚实的后盾。尽管他们一同奋斗，但孙少安的心中始终无法抹去对润叶那份深深的遗憾和惋惜，那是他生命里最初的爱恋，也是被现实无情冲刷的美好记忆。周围的环境似乎也在诉说着世事变迁的故事。田野上的庄稼已经收割完毕，只剩下一茬茬稻草桩整齐排列在地头，大地显得格外沉寂。他知道，新的农忙季节还会再来，就像那些按照既定轨迹迁徙的大雁一样，无论遭遇何种艰难险阻，人们都会继续在这片土地上耕耘播种，追求属于他们的平凡世界中的幸福生活。</p>
+            <h4>感悟分享</h4>
+            <p>《平凡的世界》让我深刻体会到了生活的酸甜苦辣，让我明白了坚持和信念的重要性。在这个平凡的世界里，每个人都有自己的梦想，每个人都在为了梦想而奋斗。无论前路如何艰难，我们都不应该放弃希望，我们都应该坚持不懈地追逐自己的梦想。感谢路遥创作了这样一部伟大的作品，让我在阅读中汲取到了人生的智慧，收获到了前行的勇气。</p>
+        </div>
+        <div class="book-section">
+            <h3>活着</h3>
+            <img src="活着封面.jpg" alt="活着封面">
+            <h4>内容摘要</h4>
+            <p>可是我再也没遇到一个像福贵这样令我难忘的人了，对自己的经历如此清楚，又能如此精彩地讲述自己。他是那种能够看到自己过去模样的人，他可以准确地看到自己年轻时走路的姿态，甚至可以看到自己是如何衰老的。这样的老人在乡间实在难以遇上，也许是困苦的生活损坏了他们的回忆，面对往事他们通常显得木讷，常常以不知所措的微笑搪塞过去。他们对自己的经历缺乏热情，仿佛是道听途说般的只记得零星几点，即便是这零星几点也都是自身之外的记忆，用一两句话表达了他们所认为的一切。随着时间的推移，我内心的愤怒渐渐平息，我开始意识到一位真正的作家所寻找的是真理，是一种排斥道德判断的真理。作家的使命不是发泄，不是控诉或者揭露，他应该向人们展示高尚。这里所说的高尚不是那种单纯的美好，而是对一切事物理解之后的超然，对善与恶一视同仁，用同情的目光看待世界。</p>
+            <h4>感悟分享</h4>
+            <p>《活着》这本书并不是告诉我们需要如何去活，而是告诉我们活着应有的态度，拿书中主人公的话说，活着，好好活着。我们无法更改生命的随意抛弃，面对各种不同的遭遇，只能默默去忍受，只能无力的感慨。虽然一直是以活着为主题,但却故意用一次次死亡去突出这个主题,从一开始那个骗他钱的沈先生,死在粪缸旁的父亲，接着是战场上“身经百战”最后还是死于枪林弹雨的老全，到后来归家得知的母亲过世，龙二被枪决，接着有庆因抽血死亡，再到后来凤霞难产流血过多而死，家珍缠病多年不疾而终，女婿二喜因事故被水泥板压死，外孙苦根竟因吃豆子活活撑死等等，写出了一个那些动荡年代带给人们的痛苦和折磨，而福贵最后活了下来，单纯的活着，寓意深刻。既然无法改变活着的事实，但可以改变活着的态度，只要活着就会有希望，无论好与坏，至少在生命的尽头可以告诉自己，我们活过，也曾努力奋斗过，始终坚持不气馁，不抱怨，坦然面对这一切。</p>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>页脚</h2>
+    </div>
+</body>
+</html>

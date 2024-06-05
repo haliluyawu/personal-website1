@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>个人网站</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .header {
+            padding: 20px;
+            text-align: center;
+            background: #ffde59;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #333;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #f8f8f2;
+            color: black;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .side, .main {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .side {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .main {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .fakeimg {
+            background-color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .fakeimg img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .photo-grid, .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .photo-grid img, .video-grid video {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .photo-grid div, .video-grid div {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #333;
+            color: white;
+            position: relative;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form label,
+        form input {
+            margin: 5px 0;
+        }
+
+        @media screen and (max-width: 800px) {
+            .row, .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .side, .main {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>我的网站</h3>
+        <p><b>欢迎来到我的个人网站</b>!</p>
+    </div>
+    <div class="navbar">
+        <a href="index.html">首页</a>
+        <a href="about.html">关于我</a>
+        <a href="photoshare.html">照片分享</a>
+        <a href="video.html">最新视频</a>
+        <a href="article1.html">最新文章</a>
+        <a href="liuyan.html">留言</a>
+    </div>
+    <div class="row">
+        <div class="main">
+            <h3 id="videos">最新视频</h3>
+            <div class="video-grid">
+                <div>
+                    <video loop="loop" controls="controls">
+                        <source src="跳舞.mp4" type="video/mp4">
+                    </video>
+                    <p>和好朋友一起拍手势舞</p>
+                </div>
+                <div>
+                    <video loop="loop" controls="controls">
+                        <source src="小车视频.mp4" type="video/mp4">
+                    </video>
+                    <p>小车</p>
+                </div>
+                <div>
+                    <video loop="loop" controls="controls">
+                        <source src="手势舞1.mp4" type="video/mp4">
+                    </video>
+                    <p>又一手势舞！</p>
+                </div> 
+                <div>
+                    <video loop="loop" controls="controls">
+                        <source src="跳舞机器人.mp4" type="video/mp4">
+                    </video>
+                    <p>跳舞机器人！跳的真好！</p>
+                </div>
+            </div>
+            <div class="fakeimg">
+                <form>
+                    <label for="name">时间:</label>
+                    <input type="text" id="name" name="name">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>页脚</h2>
+    </div>
+</body>
+</html>
